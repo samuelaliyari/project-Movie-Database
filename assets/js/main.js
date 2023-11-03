@@ -1115,7 +1115,7 @@ addButton.addEventListener("click", () => modal.style.display = "block");
 const collect = () => {
     event.preventDefault()
     modal.style.display = "none"
-    let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value], lengthInput.value, ratingInput.value]
+    let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value],  ratingInput.value, lengthInput.value ]
     const newlist = [inputArr , ...movies]
     console.log(newlist)
     movieCards(newlist)
