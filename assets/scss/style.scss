@@ -112,17 +112,17 @@ body {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 grid-auto-rows: 50vh;
-                gap: 2rem;
+                gap: 5rem 3rem;
                 padding-inline: 6%;
 
                 article {
                     display: grid;
-                    width: 85%;
+                    width: 100%;
                     background-color: #FFC300;
                     color: #003566;
                     padding: 6%;
                     border-radius: 1rem;
-                    gap: 2%;
+                    gap: 1%;
                     transition: all 900ms ease-in-out;
                     &:hover {
                         transform: translate(0, -5%);
