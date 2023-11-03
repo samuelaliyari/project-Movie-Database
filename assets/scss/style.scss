@@ -138,6 +138,38 @@ body {
                         line-height: 140%;
                     }
                 }
+
+                div {
+                    grid-column: 2 /3;
+                    width: 85%;
+                    background-color: #FFC300;
+                    color: #003566;
+                    padding: 6%;
+                    border-radius: 1rem;
+                    transition: all 900ms ease-in-out;
+                    &:hover {
+                        transform: translate(0, -5%);
+                        filter: drop-shadow(0 0.5rem 0.2rem #2f00ff);
+                        
+                    }
+                    h2 {
+                        font-weight: 700;
+                        margin-block: 3%;
+                        font-size: 1.5rem;
+                    }
+                    h4 {
+                        margin-top: 3%;
+                    }
+                    img {
+                        width: 100%;
+                        transition: all 900ms ease-in-out;
+                        &:hover {
+                            transform: translate(0, -5%);
+                            filter: drop-shadow(0 0.5rem 0.2rem #2f00ff);
+                            
+                        }
+                    }
+                }
             }
         }
     }

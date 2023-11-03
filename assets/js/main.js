@@ -1065,17 +1065,24 @@ function searchMovie() {
     moviesFound = []
     movies.forEach((elt) => {
         if (elt.toString().toLowerCase().includes(searchInput.value.toLowerCase())) {
-            moviesFound.push(elt)
+            moviesFound.push(elt);
+            moviesFound.forEach((elt) => output.innerHTML += `
+            <article>
+            <h2>${elt[0]}</h2>
+            <h4>${elt[1]}</h4>
+            <h3>${elt[2]}</h3>
+            <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
+            <h4>${elt[3]}</h4>
+            <h4>${elt[5]}</h4>
+            </article>`);
+        }else {
+            output.innerHTML = `<div>
+            <h2>There is no result found for ${searchInput.value}</h2>
+            <h4>Click on the link below and try it on IMDB </h4>
+            <a href="https://www.imdb.com/"><img src="./assets/img/imdb.png" alt="imdb logo"></a>
+            </div>`;
         }
     } )
     
-    moviesFound.forEach((elt) => output.innerHTML += `
-    <article>
-    <h2>${elt[0]}</h2>
-    <h4>${elt[1]}</h4>
-    <h3>${elt[2]}</h3>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
-    <h4>${elt[3]}</h4>
-    <h4>${elt[5]}</h4>
-    </article>`);
+
 }
