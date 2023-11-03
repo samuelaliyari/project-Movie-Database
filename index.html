@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Movie Database</title>
+</head>
+<body onload="movieCards(movies)">
+    <header>
+        <h1>Movies for You</h1>
+        <h2>The best MovieDB</h2>
+    </header>
+    <main>
+        <section class="searchSection">
+            <form>
+                <input type="text">
+                <input type="submit" value="SEARCH" onclick="searchMovie()">
+            </form>
+            <button onclick="yearUpFunction()">YEAR UP</button>
+            <button onclick="yearDownFunction()">YEAR DOWN</button>
+            <button onclick="bestRateFunction()">BEST RATE</button>
+        </section>
+        
+        <section id="outputs" class="outputs">
+
+        </section>
+    </main>
+    
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
