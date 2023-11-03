@@ -76,6 +76,8 @@ body main section form input[type=submit]:hover {
   background-color: #FFD60A;
   color: #001D3D;
   font-weight: 900;
+  box-shadow: 0 0.2rem 1rem 0.1rem #2f00ff;
+  transform: translate(3%, 0);
 }
 body main section button {
   font-size: 1rem;
@@ -92,6 +94,8 @@ body main section button {
 body main section button:hover {
   background-color: #FFD60A;
   color: #001D3D;
+  box-shadow: 0 0.2rem 1rem 0.2rem #2f00ff;
+  transform: translate(0, -5%);
 }
 body main section:nth-of-type(2) {
   padding: 1%;
@@ -110,6 +114,10 @@ body main section:nth-of-type(2) article {
   display: grid;
   gap: 2%;
   transition: all 900ms ease-in-out;
+}
+body main section:nth-of-type(2) article:hover {
+  transform: translate(0, -5%);
+  box-shadow: 0 0.6rem 1rem 0.2rem #2f00ff;
 }
 body main section:nth-of-type(2) article h4 {
   font-weight: 400;

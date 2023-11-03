@@ -81,6 +81,8 @@ body {
                             background-color: #FFD60A;
                             color: #001D3D;
                             font-weight: 900;
+                            box-shadow: 0 0.2rem 1rem 0.1rem  #2f00ff;
+                            transform: translate(3%, 0);
                         }
                     }
                 }
@@ -99,6 +101,8 @@ body {
                 &:hover {
                     background-color: #FFD60A;
                     color: #001D3D;
+                    box-shadow: 0 0.2rem 1rem 0.2rem  #2f00ff;
+                    transform: translate(0, -5%);
 
                 }
             }
@@ -120,6 +124,10 @@ body {
                     display: grid;
                     gap: 2%;
                     transition: all 900ms ease-in-out;
+                    &:hover {
+                        transform: translate(0, -5%);
+                        box-shadow: 0 0.6rem 1rem 0.2rem  #2f00ff;
+                    }
                     
                     h4 {
                         font-weight: 400;
