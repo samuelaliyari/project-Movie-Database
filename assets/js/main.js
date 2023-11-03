@@ -1023,8 +1023,8 @@ let movieCards = (array) => {
 <h2>${elt[0]}</h2>
 <h4>${elt[1]}</h4>
 <h3>${elt[2]}</h3>
-<p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
 <h4>${elt[3]}</h4>
+<p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
 <h4>${elt[5]}</h4>
 </article>`);
 
@@ -1038,8 +1038,8 @@ function yearUpFunction() {
     <h2>${elt[0]}</h2>
     <h4>${elt[1]}</h4>
     <h3>${elt[2]}</h3>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
     <h4>${elt[3]}</h4>
+    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
     <h4>${elt[5]}</h4>
     </article>`);
 }
@@ -1050,8 +1050,8 @@ function yearDownFunction() {
     <h2>${elt[0]}</h2>
     <h4>${elt[1]}</h4>
     <h3>${elt[2]}</h3>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
     <h4>${elt[3]}</h4>
+    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
     <h4>${elt[5]}</h4>
     </article>`);
 }
@@ -1062,8 +1062,8 @@ function bestRateFunction() {
     <h2>${elt[0]}</h2>
     <h4>${elt[1]}</h4>
     <h3>${elt[2]}</h3>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
     <h4>${elt[3]}</h4>
+    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
     <h4>${elt[5]}</h4>
     </article>`);
 }
@@ -1095,9 +1095,9 @@ function searchMovie() {
                 <h2>${elt[0]}</h2>
                 <h4>${elt[1]}</h4>
                 <h3>${elt[2]}</h3>
-                <p><br>${elt[4].toString().replaceAll(",", "<br>")}<br></p>
                 <h4>${elt[3]}</h4>
                 <h4>${elt[5]}</h4>
+                <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
                 </article>`);
                 
             }
@@ -1115,7 +1115,7 @@ addButton.addEventListener("click", () => modal.style.display = "block");
 const collect = () => {
     event.preventDefault()
     modal.style.display = "none"
-    let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value],  ratingInput.value, lengthInput.value ]
+    let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value], lengthInput.value, ratingInput.value]
     const newlist = [inputArr , ...movies]
     console.log(newlist)
     movieCards(newlist)
