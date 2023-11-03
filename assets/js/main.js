@@ -1006,9 +1006,18 @@ const yearUp = document.body.querySelector("button:nth-of-type(1)");
 const yearDown = document.body.querySelector("button:nth-of-type(2)");
 const bestRate = document.body.querySelector("button:nth-of-type(3)");
 const searchInput = document.body.querySelector("input[type='text']");
+const addButton = document.body.querySelector("#addButton");
+const modal = document.body.querySelector(".modal");
+const titleInput = document.body.querySelector(".modal input:nth-of-type(1)");
+const yearInput = document.body.querySelector(".modal input:nth-of-type(2)");
+const directorInput = document.body.querySelector(".modal input:nth-of-type(3)");
+const genreInput = document.body.querySelector(".modal input:nth-of-type(4)");
+const lengthInput = document.body.querySelector(".modal input:nth-of-type(5)");
+const ratingInput = document.body.querySelector(".modal input:nth-of-type(6)");
 
 
 let movieCards = (array) => {
+    output.innerHTML = ``
     array.forEach((elt) => output.innerHTML += `
 <article>
 <h2>${elt[0]}</h2>
@@ -1074,8 +1083,8 @@ function searchMovie() {
     if (!movies.toString().toLowerCase().includes(searchInput.value.toLowerCase())){
         output.innerHTML = `<div>
         <h2>There is no result found for ${searchInput.value}</h2>
-        <h4>Click on the link below and try it on IMDB </h4>
-        <a href="https://www.imdb.com/"><img src="./assets/img/imdb.png" alt="imdb logo"></a>
+        <h4>Click on the link below and try it on IMDB</h4>
+        <a href="https://www.imdb.com/" target="_blank"><img src="./assets/img/imdb.png" alt="imdb logo"></a>
         </div>`;    
     }else {
         movies.forEach((elt) => {
@@ -1098,4 +1107,16 @@ function searchMovie() {
 
     
 
+}
+
+
+addButton.addEventListener("click", () => modal.style.display = "block");
+
+const collect = () => {
+    event.preventDefault()
+    modal.style.display = "none"
+    let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value], lengthInput.value, ratingInput.value]
+    const newlist = [inputArr , ...movies]
+    console.log(newlist)
+    movieCards(newlist)
 }

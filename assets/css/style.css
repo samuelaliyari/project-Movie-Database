@@ -28,6 +28,7 @@ body {
   background-color: #001D3D;
   text-align: center;
   padding: 5%;
+  position: relative;
 }
 body header {
   color: #FFD60A;
@@ -47,7 +48,7 @@ body main section form {
 body main section form input {
   padding: 0.5%;
 }
-body main section form input[type=text] {
+body main section form input[type=text], body main section form input[type=number] {
   padding: 1%;
   width: 26%;
   border-radius: 2rem;
@@ -59,7 +60,7 @@ body main section form input[type=text] {
   font-weight: 400;
   text-align: center;
 }
-body main section form input[type=text]:focus {
+body main section form input[type=text]:focus, body main section form input[type=number]:focus {
   outline: none;
 }
 body main section form input[type=submit] {
@@ -73,9 +74,6 @@ body main section form input[type=submit] {
   transition: all 500ms ease-in-out;
 }
 body main section form input[type=submit]:hover {
-  background-color: #FFD60A;
-  color: #001D3D;
-  font-weight: 900;
   box-shadow: 0 0.2rem 1rem 0.1rem #2f00ff;
   transform: translate(3%, 0);
 }
@@ -92,10 +90,16 @@ body main section button {
   font-weight: 700;
 }
 body main section button:hover {
-  background-color: #FFD60A;
-  color: #001D3D;
   box-shadow: 0 0.2rem 1rem 0.2rem #2f00ff;
   transform: translate(0, -5%);
+}
+body main section button:nth-of-type(4) {
+  transition: all 1000ms ease-in-out;
+}
+body main section button:nth-of-type(4):hover {
+  border: 2px solid #FFD60A;
+  color: #FFD60A;
+  background-color: rgba(0, 0, 0, 0);
 }
 body main section:nth-of-type(2) {
   padding: 1%;
@@ -145,7 +149,7 @@ body main section:nth-of-type(2) div h2 {
   font-size: 1.5rem;
 }
 body main section:nth-of-type(2) div h4 {
-  margin-top: 3%;
+  margin-top: 10%;
 }
 body main section:nth-of-type(2) div img {
   width: 100%;
@@ -154,6 +158,70 @@ body main section:nth-of-type(2) div img {
 body main section:nth-of-type(2) div img:hover {
   transform: translate(0, -5%);
   filter: drop-shadow(0 0.5rem 0.2rem #2f00ff);
+}
+body .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7019607843);
+  padding-top: 7%;
+  display: none;
+}
+body .modal form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: center;
+  padding: 5% 1% 5% 1%;
+  background-color: rgba(0, 17, 100, 0.887);
+  border-radius: 1rem;
+  border: 2px solid #FFC300;
+}
+body .modal form input {
+  padding: 0.5%;
+  width: 80%;
+}
+body .modal form input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+body .modal form input[type=text], body .modal form input[type=number] {
+  padding: 1%;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.09);
+  border: 2px solid #FFD60A;
+  color: #FFD60A;
+  margin-inline: 0.5%;
+  font-weight: 400;
+  text-align: center;
+}
+body .modal form input[type=text]:focus, body .modal form input[type=number]:focus {
+  outline: none;
+}
+body .modal form input[type=text]::placeholder, body .modal form input[type=number]::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+body .modal form input[type=submit] {
+  padding: 0.5% 1%;
+  color: #FFD60A;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2rem;
+  border: 2px solid #FFD60A;
+  padding: 1% 4%;
+  font-size: 1.5rem;
+  transition: all 500ms ease-in-out;
+  margin-top: 3%;
+}
+body .modal form input[type=submit]:hover {
+  background-color: #FFD60A;
+  color: #001D3D;
+  box-shadow: 0 0.2rem 0 0.1rem #856f00;
+  transform: translate(0, -5%);
 }
 
 /*# sourceMappingURL=style.css.map */

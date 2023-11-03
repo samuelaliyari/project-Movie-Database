@@ -20,12 +20,23 @@
             <button onclick="yearUpFunction()">YEAR UP</button>
             <button onclick="yearDownFunction()">YEAR DOWN</button>
             <button onclick="bestRateFunction()">BEST RATE</button>
+            <button id="addButton">+</button>
         </section>
         
         <section id="outputs" class="outputs">
-
-        </section>
     </main>
+</section>
+<section id="modal" class="modal">
+    <form>
+        <input type="text" placeholder="Movietitle">
+        <input type="number" placeholder="Releaseyear">
+        <input type="text" placeholder="Director">
+        <input type="text" placeholder="Genre">
+        <input type="text" placeholder="Length">
+        <input type="number" placeholder="Rating">
+        <input type="submit" value="Add to collection" onclick="collect()">
+    </form>
+</section> 
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

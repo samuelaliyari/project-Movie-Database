@@ -32,6 +32,7 @@ body {
     background-color: #001D3D;
     text-align: center;
     padding: 5%;
+    position: relative;
     header {
         color: #FFD60A;
         padding: 2%;
@@ -42,7 +43,6 @@ body {
 
     }
     main {
-
         section {
             margin-bottom: 5%;
             
@@ -51,7 +51,8 @@ body {
                 margin-block: 3%;
                 input {
                     padding: 0.5% ;
-                    &[type=text]{
+                    &[type=text],
+                    &[type=number]{
                         padding: 1%;
                         width: 26%;
                         border-radius: 2rem;
@@ -78,9 +79,6 @@ body {
                         transition: all 500ms ease-in-out;
                         
                         &:hover {
-                            background-color: #FFD60A;
-                            color: #001D3D;
-                            font-weight: 900;
                             box-shadow: 0 0.2rem 1rem 0.1rem  #2f00ff;
                             transform: translate(3%, 0);
                         }
@@ -99,11 +97,18 @@ body {
                 transition: all 500ms ease-in-out;
                 font-weight: 700;
                 &:hover {
-                    background-color: #FFD60A;
-                    color: #001D3D;
+
                     box-shadow: 0 0.2rem 1rem 0.2rem  #2f00ff;
                     transform: translate(0, -5%);
 
+                }
+                &:nth-of-type(4){
+                    transition: all 1000ms ease-in-out;
+                    &:hover {
+                        border:2px solid #FFD60A;
+                        color: #FFD60A;
+                        background-color: rgba(0, 0, 0, 0);
+                    }
                 }
             }
 
@@ -157,7 +162,7 @@ body {
                         font-size: 1.5rem;
                     }
                     h4 {
-                        margin-top: 3%;
+                        margin-top: 10%;
                     }
                     img {
                         width: 100%;
@@ -168,6 +173,80 @@ body {
                             
                         }
                     }
+                }
+            }
+            
+        }
+    }
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        background-color: #000000b3;
+        padding-top: 7%;
+        display: none;
+
+
+        form {
+            
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            gap: 2rem;
+            margin: 0 auto;
+            align-items: center;
+            padding: 5% 1% 5% 1%;
+            background-color: rgba(0, 17, 100, 0.887);
+            border-radius: 1rem;
+            border: 2px solid #FFC300;
+            input {
+                padding: 0.5% ;
+                width: 80%;
+                &[type=number]::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                }
+                &[type=text],
+                &[type=number]{
+                    
+                    padding: 1%;
+                    border-radius: 2rem;
+                    font-size: 1.5rem;
+                    background-color: rgba(255, 255, 255, 0.09);
+                    border:2px solid #FFD60A;
+                    color: #FFD60A;
+                    margin-inline: 0.5%;
+                    font-weight: 400;
+                    text-align: center;
+                    &:focus {
+                        outline: none;
+                    }
+                    &::placeholder {
+                        color: #ffffff66;
+                    }
+
+                }
+                &[type="submit"]{
+                    padding: 0.5% 1%;
+                    color: #FFD60A;
+                    background-color: rgba(0, 0, 0, 0);
+                    border-radius: 2rem;
+                    border:2px solid #FFD60A;
+                    padding: 1% 4%;
+                    font-size: 1.5rem;
+                    transition: all 500ms ease-in-out;
+                    margin-top: 3%;
+                    
+                    &:hover {
+                        background-color: #FFD60A;
+                        color: #001D3D;
+                        box-shadow: 0 0.2rem 0 0.1rem  #856f00;
+                        transform: translate(0, -5%);
+                    }
+
+                    
                 }
             }
         }
