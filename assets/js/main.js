@@ -1080,7 +1080,6 @@ function searchMovie() {
     }else {
         movies.forEach((elt) => {
             if (elt.toString().toLowerCase().includes(searchInput.value.toLowerCase())) {
-                
                 moviesFound.push(elt);
                 moviesFound.forEach((elt) => output.innerHTML += `
                 <article>
