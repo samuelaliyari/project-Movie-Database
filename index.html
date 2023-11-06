@@ -13,8 +13,8 @@
     </header>
     <main>
         <section class="searchSection">
-            <form>
-                <input type="text">
+            <form onsubmit="return false">
+                <input type="text" onclick=" value = '' " >
                 <input type="submit" value="SEARCH" onclick="searchMovie()">
             </form>
             <button onclick="yearUpFunction()">YEAR UP</button>

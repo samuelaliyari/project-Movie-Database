@@ -1019,53 +1019,34 @@ const ratingInput = document.body.querySelector(".modal input:nth-of-type(6)");
 let movieCards = (array) => {
     output.innerHTML = ``
     array.forEach((elt) => output.innerHTML += `
-<article>
-<h2>${elt[0]}</h2>
-<h4>${elt[1]}</h4>
-<h3>${elt[2]}</h3>
-<h4>${elt[3]}</h4>
-<p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
-<h4>${elt[5]}</h4>
-</article>`);
-
+    <article>
+    <h2>${elt[0]}</h2>
+    <h4>${elt[1]}</h4>
+    <h3>${elt[2]}</h3>
+    <h4>${elt[3]}</h4>
+    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
+    <h4>${elt[5]}</h4>
+    </article>`)
 }
 
 
 function yearUpFunction() {
     output.innerHTML = ""
-    movies.sort((year1, year2) => (year1[1] - year2[1])  ).forEach((elt) => output.innerHTML += `
-    <article>
-    <h2>${elt[0]}</h2>
-    <h4>${elt[1]}</h4>
-    <h3>${elt[2]}</h3>
-    <h4>${elt[3]}</h4>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
-    <h4>${elt[5]}</h4>
-    </article>`);
+    const yearsUpList =movies.sort((year1, year2) => (year1[1] - year2[1])  );
+    movieCards(yearsUpList)
 }
+
+
 function yearDownFunction() {
     output.innerHTML = ""
-    movies.sort((year1, year2) => (year2[1] - year1[1])  ).forEach((elt) => output.innerHTML += `
-    <article>
-    <h2>${elt[0]}</h2>
-    <h4>${elt[1]}</h4>
-    <h3>${elt[2]}</h3>
-    <h4>${elt[3]}</h4>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
-    <h4>${elt[5]}</h4>
-    </article>`);
+    const yearsDownList = movies.sort((year1, year2) => (year2[1] - year1[1]));
+    movieCards(yearsDownList)
 }
+
 function bestRateFunction() {
     output.innerHTML = ""
-    movies.sort((year1, year2) => (year2[5] - year1[5])  ).forEach((elt) => output.innerHTML += `
-    <article>
-    <h2>${elt[0]}</h2>
-    <h4>${elt[1]}</h4>
-    <h3>${elt[2]}</h3>
-    <h4>${elt[3]}</h4>
-    <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
-    <h4>${elt[5]}</h4>
-    </article>`);
+    const ratedList = movies.sort((year1, year2) => (year2[5] - year1[5]));
+    movieCards(ratedList)
 }
 
 const notFound = () => {
@@ -1076,38 +1057,22 @@ const notFound = () => {
     </div>`;
 }
 
+
 function searchMovie() {
-    event.preventDefault();
     output.innerHTML = ""
     const moviesFound = []
     if (!movies.toString().toLowerCase().includes(searchInput.value.toLowerCase())){
-        output.innerHTML = `<div>
-        <h2>There is no result found for ${searchInput.value}</h2>
-        <h4>Click on the link below and try it on IMDB</h4>
-        <a href="https://www.imdb.com/" target="_blank"><img src="./assets/img/imdb.png" alt="imdb logo"></a>
-        </div>`;    
+        notFound()
     }else {
         movies.forEach((elt) => {
             if (elt.toString().toLowerCase().includes(searchInput.value.toLowerCase())) {
                 moviesFound.push(elt);
-                moviesFound.forEach((elt) => output.innerHTML += `
-                <article>
-                <h2>${elt[0]}</h2>
-                <h4>${elt[1]}</h4>
-                <h3>${elt[2]}</h3>
-                <h4>${elt[3]}</h4>
-                <h4>${elt[5]}</h4>
-                <p><br>${elt[4].toString().replaceAll(",", "<br>")}</p>
-                </article>`);
-                
+                movieCards(moviesFound)
             }
-    
         } )
     }
-
-    
-
 }
+
 
 
 addButton.addEventListener("click", () => modal.style.display = "block");
@@ -1117,6 +1082,5 @@ const collect = () => {
     modal.style.display = "none"
     let inputArr = [titleInput.value, yearInput.value, directorInput.value, [genreInput.value], lengthInput.value, ratingInput.value]
     const newlist = [inputArr , ...movies]
-    console.log(newlist)
     movieCards(newlist)
 }

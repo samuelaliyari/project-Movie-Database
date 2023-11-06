@@ -86,20 +86,12 @@ body main section button {
   border-radius: 2rem;
   border: 2px solid #FFD60A;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  transition: all 500ms ease-in-out;
+  transition: all 400ms ease-in-out;
   font-weight: 700;
 }
 body main section button:hover {
   box-shadow: 0 0.2rem 1rem 0.2rem #2f00ff;
   transform: translate(0, -5%);
-}
-body main section button:nth-of-type(4) {
-  transition: all 1000ms ease-in-out;
-}
-body main section button:nth-of-type(4):hover {
-  border: 2px solid #FFD60A;
-  color: #FFD60A;
-  background-color: rgba(0, 0, 0, 0);
 }
 body main section:nth-of-type(2) {
   padding: 1%;
